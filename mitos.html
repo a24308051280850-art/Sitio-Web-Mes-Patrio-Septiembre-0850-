@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATOS CURIOSOS Y MITOS - MES PATRIO</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #000000; color: #ffffff; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 100%; max-width: 900px; padding: 20px; flex: 1; }
+        
+        nav.nav-bar { position: sticky; top: 0; background-color: #000000; width: 100%; padding: 15px 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .nav-buttons { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 10px; flex-wrap: wrap; }
+        
+        .btn-nav { flex: 1; min-width: 180px; padding: 12px 15px; border-radius: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; text-align: center; border: none; text-decoration: none; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.5); transition: transform 0.2s, opacity 0.2s; }
+        .btn-nav:hover { transform: translateY(-2px); opacity: 0.9; }
+        
+        .btn-verde { background-color: #006341; color: #ffffff; border: 1px solid #008f5d; }
+        .btn-blanco { background-color: #ffffff; color: #000000; border: 1px solid #cccccc; }
+        .btn-rojo { background-color: #ce1126; color: #ffffff; border: 1px solid #e61c33; }
+        
+        .page-content { background-color: #000000; border: 1px solid #333; margin-top: 20px; padding: 25px 20px; border-radius: 8px; }
+        h2 { text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .grid-mitos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card-mito { padding: 15px; border-radius: 6px; }
+        .card-mito h3 { font-size: 1.1rem; margin-bottom: 8px; }
+        .card-mito p { text-align: left; font-size: 0.95rem; line-height: 1.4; }
+
+        .card-verde { background-color: #006341; border: 1px solid #008f5d; color: #ffffff; }
+        .card-verde h3 { color: #ffffff; }
+        .card-verde p { color: #f0f0f0; }
+
+        .card-blanca { background-color: #ffffff; border: 1px solid #cccccc; color: #000000; }
+        .card-blanca h3 { color: #000000; }
+        .card-blanca p { color: #222222; }
+
+        .card-roja { background-color: #ce1126; border: 1px solid #e61c33; color: #ffffff; }
+        .card-roja h3 { color: #ffffff; }
+        .card-roja p { color: #f0f0f0; }
+        
+        footer.footer-student { width: 100%; background-color: #006341; color: #ffffff; text-align: center; font-weight: bold; font-size: 0.95rem; padding: 18px 10px; margin-top: auto; border-top: 2px solid #008f5d; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-nav btn-verde">INICIO</a>
+            <a href="fechas.html" class="btn-nav btn-verde">FECHAS IMPORTANTES</a>
+            <a href="personajes.html" class="btn-nav btn-blanco">PERSONAJES ILUSTRES</a>
+            <a href="mitos.html" class="btn-nav btn-rojo">DATOS CURIOSOS Y MITOS</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-content">
+            <h2>DATOS CURIOSOS Y MITOS</h2>
+            <div class="grid-mitos">
+                <div class="card-mito card-verde">
+                    <h3>El Mito de Juan Escutia y la Bandera:</h3>
+                    <p>La historia de que el cadete se envolvió en la bandera nacional para tirarse al vacío desde el Castillo de Chapultepec responde más a una narrativa de construcción nacionalista del siglo XIX que a un hecho documentado de forma rigurosa.</p>
+                </div>
+
+                <div class="card-mito card-blanca">
+                    <h3>¿Por qué se da el Grito el 15 y no el 16?:</h3>
+                    <p>La tradición de iniciar el festejo la noche del 15 de septiembre se popularizó durante el Porfiriato. Aunque coincide con el cumpleaños de Porfirio Díaz (15 de septiembre), el festejo nocturno ya se realizaba desde décadas antes para esperar el amanecer del día 16.</p>
+                </div>
+
+                <div class="card-mito card-roja">
+                    <h3>El origen de los Chiles en Nogada:</h3>
+                    <p>La leyenda cuenta que las monjas agustinas del convento de Santa Mónica, en Puebla, crearon este platillo para celebrar la entrada de Agustín de Iturbide, utilizando ingredientes que representaran los colores del Ejército Trigarante (verde, blanco y rojo).</p>
+                </div>
+
+                <div class="card-mito card-verde">
+                    <h3>La Bandera Trigarante:</h3>
+                    <p>La bandera utilizada en la consumación de 1821 no tenía el orden actual de colores; sus franjas eran diagonales y llevaban los colores blanco (religión), verde (independencia) y rojo (unión).</p>
+                </div>
+
+                <div class="card-mito card-blanca">
+                    <h3>La campana viajera:</h3>
+                    <p>La campana que Miguel Hidalgo hizo sonar la madrugada del 16 de septiembre de 1810 no se quedó en Dolores, Guanajuato. En 1896, Porfirio Díaz ordenó trasladarla al Palacio Nacional en la Ciudad de México. Desde entonces, permanece en el balcón principal y es la misma que el Presidente en turno hace repicar cada 15 de septiembre durante la ceremonia del Grito.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-student">
+        EMILIANO HERNANDEZ CUELLAR 5-J 24308051280850
+    </footer>
+
+</body>
+</html>

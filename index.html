@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INICIO - MES PATRIO</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #000000; color: #ffffff; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .container { width: 100%; max-width: 900px; padding: 20px; flex: 1; }
+        
+        nav.nav-bar { position: sticky; top: 0; background-color: #000000; width: 100%; padding: 15px 0; z-index: 1000; border-bottom: 1px solid #333; }
+        .nav-buttons { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 10px; flex-wrap: wrap; }
+        
+        .btn-nav { flex: 1; min-width: 180px; padding: 12px 15px; border-radius: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; text-align: center; border: none; text-decoration: none; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.5); transition: transform 0.2s, opacity 0.2s; }
+        .btn-nav:hover { transform: translateY(-2px); opacity: 0.9; }
+        
+        .btn-verde { background-color: #006341; color: #ffffff; border: 1px solid #008f5d; }
+        .btn-blanco { background-color: #ffffff; color: #000000; border: 1px solid #cccccc; }
+        .btn-rojo { background-color: #ce1126; color: #ffffff; border: 1px solid #e61c33; }
+        
+        .page-content { background-color: #000000; border: 1px solid #333; margin-top: 20px; padding: 25px 20px; border-radius: 8px; text-align: center; }
+        h2 { text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .hero img { max-width: 280px; height: auto; margin: 10px 0 20px 0; }
+        .hero p { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #d1d1d1; text-align: center; }
+        
+        footer.footer-student { width: 100%; background-color: #006341; color: #ffffff; text-align: center; font-weight: bold; font-size: 0.95rem; padding: 18px 10px; margin-top: auto; border-top: 2px solid #008f5d; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="nav-buttons">
+            <a href="index.html" class="btn-nav btn-verde">INICIO</a>
+            <a href="fechas.html" class="btn-nav btn-verde">FECHAS IMPORTANTES</a>
+            <a href="personajes.html" class="btn-nav btn-blanco">PERSONAJES ILUSTRES</a>
+            <a href="mitos.html" class="btn-nav btn-rojo">DATOS CURIOSOS Y MITOS</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-content hero">
+            <h2>MES PATRIO</h2>
+            <img src="escudo_mexico.jfif" alt="Escudo Nacional de México">
+            <p>Septiembre es conocido popularmente como el "Mes Patrio" en México. Durante este mes confluyen las festividades de la Independencia, eventos cívicos históricos, tradiciones gastronómicas y ejercicios de prevención sísmica.</p>
+        </div>
+    </div>
+
+    <footer class="footer-student">
+        EMILIANO HERNANDEZ CUELLAR 5-J 24308051280850
+    </footer>
+
+</body>
+</html>
