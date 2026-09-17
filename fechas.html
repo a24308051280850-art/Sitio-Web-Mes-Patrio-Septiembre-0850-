@@ -1,51 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- BLOQUE 1: CONFIGURACIÓN INICIAL Y METADATOS -->
+    <!-- Define idioma, codificación de caracteres acentuados y adaptabilidad móvil -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FECHAS IMPORTANTES - MES PATRIO</title>
+
     <style>
+        /* BLOQUE 2: RESETEO GLOBAL Y ESTILOS DEL BODY */
+        /* Remueve márgenes base y centra el contenido en pantalla */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #000000; color: #ffffff; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+
+        /* BLOQUE 3: ESTRUCTURA Y CONTENEDOR PRINCIPAL */
+        /* Establece los límites de ancho y espaciado de la sección */
         .container { width: 100%; max-width: 900px; padding: 20px; flex: 1; }
-        
-        nav.nav-bar { position: sticky; top: 0; background-color: #000000; width: 100%; padding: 15px 0; z-index: 1000; border-bottom: 1px solid #333; }
-        .nav-buttons { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 10px; flex-wrap: wrap; }
-        
-        .btn-nav { flex: 1; min-width: 180px; padding: 12px 15px; border-radius: 6px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; text-align: center; border: none; text-decoration: none; display: inline-block; box-shadow: 0 4px 6px rgba(0,0,0,0.5); transition: transform 0.2s, opacity 0.2s; }
+        .page-content { 
+            background-color: #000000; 
+            border: 1px solid #333; 
+            margin-top: 20px; 
+            padding: 25px 20px; 
+            border-radius: 8px; 
+        }
+        h2 { 
+            text-align: center; 
+            color: #ffffff; 
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+        /* BLOQUE 4: ESTILOS DE BARRA Y BOTONES NAV   */
+        /* Menú superior fijo (sticky) con botones flexibles */
+        nav.nav-bar { 
+            position: sticky; 
+            top: 0; 
+            background-color: #000000; 
+            width: 100%; 
+            padding: 15px 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid #333; 
+        }
+        .nav-buttons { 
+            display: flex; 
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 15px; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 0 10px; 
+            flex-wrap: wrap; 
+        }
+        .btn-nav { 
+            flex: 1; 
+            min-width: 180px; 
+            padding: 12px 15px; 
+            border-radius: 6px; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            font-size: 0.9rem; 
+            text-align: center; 
+            border: none; 
+            text-decoration: none; 
+            display: inline-block; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5); 
+            transition: transform 0.2s, opacity 0.2s; 
+        }
         .btn-nav:hover { transform: translateY(-2px); opacity: 0.9; }
-        
+
+        /* Colores individuales de los botones */
         .btn-verde { background-color: #006341; color: #ffffff; border: 1px solid #008f5d; }
         .btn-blanco { background-color: #ffffff; color: #000000; border: 1px solid #cccccc; }
         .btn-rojo { background-color: #ce1126; color: #ffffff; border: 1px solid #e61c33; }
-        
-        .page-content { background-color: #000000; border: 1px solid #333; margin-top: 20px; padding: 25px 20px; border-radius: 8px; }
-        h2 { text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .grid-fechas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        /* BLOQUE 5: MAQUETACIÓN EN GRID Y TARJETAS   */
+        /* Rejilla responsive y personalización de las tarjetas tricolor */
+        .grid-fechas { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+        }
         .card-fecha { padding: 15px; border-radius: 6px; }
         .card-fecha h3 { font-size: 1.1rem; margin-bottom: 5px; }
         .card-fecha .date { font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; color: #ffca28; }
         .card-blanca .date { color: #b58100; }
         .card-fecha p { text-align: left; font-size: 0.95rem; line-height: 1.4; }
 
+        /* Estilos variante Verde */
         .card-verde { background-color: #006341; border: 1px solid #008f5d; color: #ffffff; }
         .card-verde h3 { color: #ffffff; }
         .card-verde p { color: #f0f0f0; }
 
+        /* Estilos variante Blanca */
         .card-blanca { background-color: #ffffff; border: 1px solid #cccccc; color: #000000; }
         .card-blanca h3 { color: #000000; }
         .card-blanca p { color: #222222; }
 
+        /* Estilos variante Roja */
         .card-roja { background-color: #ce1126; border: 1px solid #e61c33; color: #ffffff; }
         .card-roja h3 { color: #ffffff; }
         .card-roja p { color: #f0f0f0; }
-        
-        footer.footer-student { width: 100%; background-color: #006341; color: #ffffff; text-align: center; font-weight: bold; font-size: 0.95rem; padding: 18px 10px; margin-top: auto; border-top: 2px solid #008f5d; letter-spacing: 1px; }
+        /* BLOQUE 6: ESTILOS DEL PIE DE PÁGINA        */
+        /* Permanece anclado en la parte inferior de la pantalla */
+        footer.footer-student { 
+            width: 100%; 
+            background-color: #006341; 
+            color: #ffffff; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 0.95rem; 
+            padding: 18px 10px; 
+            margin-top: auto; 
+            border-top: 2px solid #008f5d; 
+            letter-spacing: 1px; 
+        }
     </style>
 </head>
 <body>
-
+    <!-- BLOQUE 7: ESTRUCTURA HTML - NAVEGACIÓN     -->
+    <!-- Enlaces con apariencia de botones a las 4 páginas del sitio -->
     <nav class="nav-bar">
         <div class="nav-buttons">
             <a href="index.html" class="btn-nav btn-verde">INICIO</a>
@@ -54,50 +136,60 @@
             <a href="mitos.html" class="btn-nav btn-rojo">DATOS CURIOSOS Y MITOS</a>
         </div>
     </nav>
-
+    <!-- BLOQUE 8: ESTRUCTURA HTML - CONTENIDO      -->
+    <!-- Muestra los 6 eventos con secuencias de tarjetas (Verde, Blanca, Roja) -->
     <div class="container">
         <div class="page-content">
             <h2>FECHAS IMPORTANTES</h2>
             <div class="grid-fechas">
+                
+                <!-- Tarjeta 1 (Verde) -->
                 <div class="card-fecha card-verde">
                     <h3>Defensa del Castillo de Chapultepec</h3>
                     <div class="date">13 de septiembre de 1847</div>
                     <p>Se conmemora la gesta heroica de los Niños Héroes y la defensa del Colegio Militar frente a la invasión estadounidense.</p>
                 </div>
 
+                <!-- Tarjeta 2 (Blanca) -->
                 <div class="card-fecha card-blanca">
                     <h3>El Grito de Dolores</h3>
                     <div class="date">15 de septiembre (noche)</div>
                     <p>El cura Miguel Hidalgo y Costilla convoca al pueblo a levantarse en armas contra el dominio español en Dolores, Guanajuato.</p>
                 </div>
 
+                <!-- Tarjeta 3 (Roja) -->
                 <div class="card-fecha card-roja">
                     <h3>Inicio de la Guerra de Independencia</h3>
                     <div class="date">16 de septiembre de 1810</div>
                     <p>Comienza formalmente el movimiento insurgente. Se celebra con el tradicional Desfile Militar en la Ciudad de México y en todo el país.</p>
                 </div>
 
+                <!-- Tarjeta 4 (Verde) -->
                 <div class="card-fecha card-verde">
                     <h3>Consumación de la Independencia</h3>
                     <div class="date">27 de septiembre de 1821</div>
                     <p>El Ejército Trigarante, encabezado por Agustín de Iturbide y Vicente Guerrero, entra triunfal a la Ciudad de México tras 11 años de lucha.</p>
                 </div>
 
+                <!-- Tarjeta 5 (Blanca) -->
                 <div class="card-fecha card-blanca">
                     <h3>Firma del Acta de Independencia</h3>
                     <div class="date">28 de septiembre de 1821</div>
                     <p>Se firma el documento formal que declara formalmente el nacimiento del Imperio Mexicano como nación soberana.</p>
                 </div>
 
+                <!-- Tarjeta 6 (Roja) -->
                 <div class="card-fecha card-roja">
                     <h3>Nacimiento de José María Morelos</h3>
                     <div class="date">30 de septiembre de 1765</div>
                     <p>Nace el "Siervo de la Nación", estratega militar y político clave que redactó los Sentimientos de la Nación.</p>
                 </div>
+
             </div>
         </div>
     </div>
-
+    <!-- BLOQUE 9: ESTRUCTURA HTML - PIE DE PÁGINA  -->
+    <!-- Datos de identificación personal de entrega del alumno -->
     <footer class="footer-student">
         EMILIANO HERNANDEZ CUELLAR 5-J 24308051280850
     </footer>
