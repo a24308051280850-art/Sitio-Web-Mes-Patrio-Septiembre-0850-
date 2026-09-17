@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- BLOQUE 1: CONFIGURACIÓN INICIAL Y METADATOS DEL DOCUMENTO -->
+    <!-- Define el idioma (español), la codificación de caracteres (UTF-8) para acentos 
+         y hace la página adaptable a dispositivos móviles (Viewport). -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INICIO - MES PATRIO</title>
+    <title>FECHAS IMPORTANTES - MES PATRIO</title>
+
     <style>
+        /* BLOQUE 2: RESETEO Y ESTILOS GENERALES DEL CUERPO (BODY) */
+        /* Elimina márgenes por defecto y ajusta Flexbox vertical para asegurar 
+           que la página ocupe al menos el 100% de la altura de la pantalla (100vh). */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background-color: #000000; color: #ffffff; font-family: Arial, Helvetica, sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            font-family: Arial, Helvetica, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh; 
+        }
+
+        /* BLOQUE 3: ESTRUCTURA DEL CONTENEDOR PRINCIPAL */
+        /* Centra el contenido en pantalla limitando el ancho máximo a 900px. */
         .container { width: 100%; max-width: 900px; padding: 20px; flex: 1; }
-        
+        .page-content { 
+            background-color: #000000; 
+            border: 1px solid #333; 
+            margin-top: 20px; 
+            padding: 25px 20px; 
+            border-radius: 8px; 
+        }
+        h2 { text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* BLOQUE 4: BARRA DE NAVEGACIÓN Y BOTONES */
+        /* Menú superior fijo (sticky) que no se mueve al hacer scroll. 
+           Usa Flexbox para distribuir los enlaces tipo botón de forma centrada. */
         nav.nav-bar { position: sticky; top: 0; background-color: #000000; width: 100%; padding: 15px 0; z-index: 1000; border-bottom: 1px solid #333; }
         .nav-buttons { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 15px; max-width: 900px; margin: 0 auto; padding: 0 10px; flex-wrap: wrap; }
         
@@ -18,18 +47,38 @@
         .btn-verde { background-color: #006341; color: #ffffff; border: 1px solid #008f5d; }
         .btn-blanco { background-color: #ffffff; color: #000000; border: 1px solid #cccccc; }
         .btn-rojo { background-color: #ce1126; color: #ffffff; border: 1px solid #e61c33; }
-        
-        .page-content { background-color: #000000; border: 1px solid #333; margin-top: 20px; padding: 25px 20px; border-radius: 8px; text-align: center; }
-        h2 { text-align: center; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
-        
-        .hero img { max-width: 280px; height: auto; margin: 10px 0 20px 0; }
-        .hero p { max-width: 700px; margin: 20px auto; line-height: 1.6; color: #d1d1d1; text-align: center; }
-        
+
+        /* BLOQUE 5: DISEÑO EN REJILLA (GRID) Y TARJETAS INFORMATIVAS */
+        /* Organiza las tarjetas en columnas automáticas que se adaptan según el ancho de la pantalla. */
+        .grid-fechas { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card-fecha { padding: 15px; border-radius: 6px; }
+        .card-fecha h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .card-fecha .date { font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; color: #ffca28; }
+        .card-blanca .date { color: #b58100; }
+        .card-fecha p { text-align: left; font-size: 0.95rem; line-height: 1.4; }
+
+        /* VARIANTES TRICOLOR PARA LAS TARJETAS */
+        .card-verde { background-color: #006341; border: 1px solid #008f5d; color: #ffffff; }
+        .card-verde h3 { color: #ffffff; }
+        .card-verde p { color: #f0f0f0; }
+
+        .card-blanca { background-color: #ffffff; border: 1px solid #cccccc; color: #000000; }
+        .card-blanca h3 { color: #000000; }
+        .card-blanca p { color: #222222; }
+
+        .card-roja { background-color: #ce1126; border: 1px solid #e61c33; color: #ffffff; }
+        .card-roja h3 { color: #ffffff; }
+        .card-roja p { color: #f0f0f0; }
+
+        /* BLOQUE 6: PIE DE PÁGINA (FOOTER) */
+        /* Se empuja automáticamente al fondo mediante 'margin-top: auto' dentro de Flexbox. */
         footer.footer-student { width: 100%; background-color: #006341; color: #ffffff; text-align: center; font-weight: bold; font-size: 0.95rem; padding: 18px 10px; margin-top: auto; border-top: 2px solid #008f5d; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
+    <!-- BLOQUE 7: HTML - BARRA DE NAVEGACIÓN -->
+    <!-- Enlaces estilizados para alternar entre los 4 archivos del sitio web. -->
     <nav class="nav-bar">
         <div class="nav-buttons">
             <a href="index.html" class="btn-nav btn-verde">INICIO</a>
@@ -39,14 +88,61 @@
         </div>
     </nav>
 
+    <!-- BLOQUE 8: HTML - SECCIÓN PRINCIPAL CON RETÍCULA DE FECHAS -->
+    <!-- Almacena el título principal y las 6 tarjetas de eventos históricos intercaladas con los colores patrios. -->
     <div class="container">
-        <div class="page-content hero">
-            <h2>MES PATRIO</h2>
-            <img src="escudo_mexico.jfif" alt="Escudo Nacional de México">
-            <p>Septiembre es conocido popularmente como el "Mes Patrio" en México. Durante este mes confluyen las festividades de la Independencia, eventos cívicos históricos, tradiciones gastronómicas y ejercicios de prevención sísmica.</p>
+        <div class="page-content">
+            <h2>FECHAS IMPORTANTES</h2>
+            <div class="grid-fechas">
+                
+                <!-- Tarjeta Verde -->
+                <div class="card-fecha card-verde">
+                    <h3>Defensa del Castillo de Chapultepec</h3>
+                    <div class="date">13 de septiembre de 1847</div>
+                    <p>Se conmemora la gesta heroica de los Niños Héroes y la defensa del Colegio Militar frente a la invasión estadounidense.</p>
+                </div>
+
+                <!-- Tarjeta Blanca -->
+                <div class="card-fecha card-blanca">
+                    <h3>El Grito de Dolores</h3>
+                    <div class="date">15 de septiembre (noche)</div>
+                    <p>El cura Miguel Hidalgo y Costilla convoca al pueblo a levantarse en armas contra el dominio español en Dolores, Guanajuato.</p>
+                </div>
+
+                <!-- Tarjeta Roja -->
+                <div class="card-fecha card-roja">
+                    <h3>Inicio de la Guerra de Independencia</h3>
+                    <div class="date">16 de septiembre de 1810</div>
+                    <p>Comienza formalmente el movimiento insurgente. Se celebra con el tradicional Desfile Militar en la Ciudad de México y en todo el país.</p>
+                </div>
+
+                <!-- Tarjeta Verde -->
+                <div class="card-fecha card-verde">
+                    <h3>Consumación de la Independencia</h3>
+                    <div class="date">27 de septiembre de 1821</div>
+                    <p>El Ejército Trigarante, encabezado por Agustín de Iturbide y Vicente Guerrero, entra triunfal a la Ciudad de México tras 11 años de lucha.</p>
+                </div>
+
+                <!-- Tarjeta Blanca -->
+                <div class="card-fecha card-blanca">
+                    <h3>Firma del Acta de Independencia</h3>
+                    <div class="date">28 de septiembre de 1821</div>
+                    <p>Se firma el documento formal que declara formalmente el nacimiento del Imperio Mexicano como nación soberana.</p>
+                </div>
+
+                <!-- Tarjeta Roja -->
+                <div class="card-fecha card-roja">
+                    <h3>Nacimiento de José María Morelos</h3>
+                    <div class="date">30 de septiembre de 1765</div>
+                    <p>Nace el "Siervo de la Nación", estratega militar y político clave que redactó los Sentimientos de la Nación.</p>
+                </div>
+
+            </div>
         </div>
     </div>
 
+    <!-- BLOQUE 9: HTML - PIE DE PÁGINA DEL ALUMNO -->
+    <!-- Contiene los datos fijos del autor del proyecto. -->
     <footer class="footer-student">
         EMILIANO HERNANDEZ CUELLAR 5-J 24308051280850
     </footer>
