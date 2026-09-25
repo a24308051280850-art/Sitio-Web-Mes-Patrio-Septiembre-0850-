@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- ========================================== -->
     <!-- BLOQUE 1: CONFIGURACIÓN INICIAL Y METADATOS -->
     <!-- Define la codificación UTF-8 para acentos/caracteres y el viewport móvil -->
-    <!-- ========================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INICIO - MES PATRIO</title>
 
     <style>
-        /* ========================================== */
-        /* BLOQUE 2: RESETEO Y ESTILOS DEL CUERPO     */
+ 
         /* Limpia márgenes por defecto y configura el Flexbox vertical de la pantalla */
-        /* ========================================== */
+     
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { 
             background-color: #000000; 
@@ -25,10 +22,9 @@
             min-height: 100vh; 
         }
 
-        /* ========================================== */
-        /* BLOQUE 3: ESTRUCTURA DEL CONTENEDOR        */
+    
         /* Limita el ancho máximo a 900px y centra la sección en la pantalla */
-        /* ========================================== */
+      
         .container { width: 100%; max-width: 900px; padding: 20px; flex: 1; }
         .page-content { 
             background-color: #000000; 
@@ -45,11 +41,7 @@
             text-transform: uppercase; 
             letter-spacing: 1px; 
         }
-
-        /* ========================================== */
-        /* BLOQUE 4: BARRA DE NAVEGACIÓN Y BOTONES    */
         /* Menú superior fijo (sticky) con las clases de botones tricolor */
-        /* ========================================== */
         nav.nav-bar { 
             position: sticky; 
             top: 0; 
@@ -93,11 +85,7 @@
         .btn-verde { background-color: #006341; color: #ffffff; border: 1px solid #008f5d; }
         .btn-blanco { background-color: #ffffff; color: #000000; border: 1px solid #cccccc; }
         .btn-rojo { background-color: #ce1126; color: #ffffff; border: 1px solid #e61c33; }
-
-        /* ========================================== */
-        /* BLOQUE 5: ESTILOS DE LA SECCIÓN HERO        */
         /* Reglas exclusivas para la imagen del escudo y el texto de bienvenida */
-        /* ========================================== */
         .hero img { 
             max-width: 280px; 
             height: auto; 
@@ -110,11 +98,7 @@
             color: #d1d1d1; 
             text-align: center; 
         }
-
-        /* ========================================== */
-        /* BLOQUE 6: ESTILOS DEL PIE DE PÁGINA (FOOTER)*/
         /* Borde superior e información centrada al final del documento */
-        /* ========================================== */
         footer.footer-student { 
             width: 100%; 
             background-color: #006341; 
